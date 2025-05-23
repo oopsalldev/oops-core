@@ -1,0 +1,41 @@
+{
+  "name": "oopsall/oopscore",
+  "description": "OopsCore: Laravel için bağımsız, plug&play çekirdek modül ve modül yönetim sistemi.",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "OopsAllBusiness",
+      "email": "developer@oopsallbusiness.com"
+    }
+  ],
+  "keywords": [
+    "laravel",
+    "oops",
+    "module",
+    "core",
+    "modular"
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\Modules\\OopsCore\\": "app/Modules/OopsCore/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "App\\Modules\\OopsCore\\Providers\\ModuleServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php artisan vendor:publish --tag=oopscore-config --force"
+    ]
+  },
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^12.0"
+  }
+}
